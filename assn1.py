@@ -7,8 +7,8 @@ references          Python QGIS Cookbook
 """
 
 # defining paths to root and working directories
-root_dir = "/home/hempire/dev/pyqgis_assn/"
-data_dir="/home/hempire/dev/pyqgis_assn/data/"
+root_dir = "/home/hempire/dev/pyqgis/"
+data_dir="/home/hempire/dev/pyqgis/data/"
 
 # importing required libraries
 import sys
@@ -22,11 +22,11 @@ sys.path.append(root_dir)
 import MapComposer
 
 # defining location path for csv file
-uri =  data_dir + "points.csv?type=csv&xField=X&yField=Y"
+uri =  data_dir + "points.csv?crs=epsg:4326&type=csv&xField=X&yField=Y"
 layer = QgsVectorLayer(uri, 'points', "delimitedtext")
 
 # loading shapefile
-layer2 = QgsVectorLayer('/home/hempire/dev/pyqgis_assn/data/Rwanda.shp','Rwanda','ogr')
+layer2 = QgsVectorLayer('/home/hempire/dev/pyqgis/data/Rwanda.shp','Rwanda','ogr')
 
 # validating if layer exists
 if not layer.isValid():
@@ -47,6 +47,7 @@ layer_label.enabled = True
 layer_label.fieldName = 'NN'
 layer_label.writeToLayer(layer)
 iface.mapCanvas().refresh()
+iface.mapCanvas().resize(QSize(1920,1080))
 
 # accessing the map renderer
 mapRend = iface.mapCanvas().mapRenderer()
@@ -146,5 +147,5 @@ qcomp.label.setItemPosition(qcomp.x,qcomp.y-10)
 qcomp.c.addItem(qcomp.label)
 
 # saving the map as JPEG
-qcomp.output("/home/hempire/dev/pyqgis_assn/myMap.jpg", "jpg")
+qcomp.output("/home/hempire/dev/pyqgis/myMap.jpg", "jpg")
 # End Of Script
