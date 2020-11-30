@@ -7,8 +7,8 @@ references          Python QGIS Cookbook
 """
 
 # defining paths to root and working directories
-root_dir = "/home/hempire/dev/pyqgis/"
-data_dir="/home/hempire/dev/pyqgis/data/"
+root_dir = "/home/youruser/dev/pyqgis/"
+data_dir="/home/youruser/dev/pyqgis/data/"
 
 # importing required libraries
 import sys
@@ -26,7 +26,7 @@ uri =  data_dir + "points.csv?crs=epsg:4326&type=csv&xField=X&yField=Y"
 layer = QgsVectorLayer(uri, 'points', "delimitedtext")
 
 # loading shapefile
-layer2 = QgsVectorLayer('/home/hempire/dev/pyqgis/data/Rwanda.shp','Rwanda','ogr')
+layer2 = QgsVectorLayer('/home/youruser/dev/pyqgis/data/Rwanda.shp','Rwanda','ogr')
 
 # validating if layer exists
 if not layer.isValid():
