@@ -147,5 +147,5 @@ qcomp.label.setItemPosition(qcomp.x,qcomp.y-10)
 qcomp.c.addItem(qcomp.label)
 
 # saving the map as JPEG
-qcomp.output("/home/hempire/dev/pyqgis/myMap.jpg", "jpg")
+qcomp.output("/home/youruser/dev/pyqgis/myMap.jpg", "jpg")
 # End Of Script
